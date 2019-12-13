@@ -301,4 +301,9 @@
     XCTAssertTrue([NSUserDefaults.mme_configuration.mme_configServiceURL.absoluteString isEqual:MMEAPIClientBaseChinaConfigURL]);
 }
 
+-(void)testAccountTypeDefaultSetting {
+    [NSUserDefaults.standardUserDefaults setInteger:1 forKey:@"MGLMapboxAccountType"];
+    XCTAssertFalse(NSUserDefaults.mme_configuration.mme_isCollectionEnabled);
+}
+
 @end
